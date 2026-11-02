@@ -1,6 +1,8 @@
 package com.petcare.services;
 
+import com.petcare.dao.MascotaDAO;
 import com.petcare.dao.VeterinarioDAO;
+import com.petcare.entity.Mascota;
 import com.petcare.entity.Veterinario;
 
 public class VeterinarioService {
@@ -32,5 +34,16 @@ public class VeterinarioService {
 
         System.out.println("Veterinario registrado");
         return VeterinarioDAO.registrarVeterinario(v);
+    }
+
+    public void buscarVeterinarioPorColegiado(Veterinario v) {
+        VeterinarioDAO = new VeterinarioDAO();
+        Veterinario veterinario = VeterinarioDAO.buscarVeterinarioPorColegiado(v);
+
+        if(veterinario != null){
+            System.out.println(veterinario);
+        }else{
+            System.out.println("No existe el veterinario.");
+        }
     }
 }

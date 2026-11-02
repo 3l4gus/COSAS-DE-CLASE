@@ -45,6 +45,7 @@ public class App {
                             registrarMascota();
                             break;
                         case 2:
+                            buscarMascotaPorChip();
                             break;
                         case 3:
                             break;
@@ -73,6 +74,7 @@ public class App {
                             registrarVeterinario();
                             break;
                         case 2:
+                            buscarVeterinarioPorColegiado();
                             break;
                         case 3:
                             break;
@@ -129,5 +131,13 @@ public class App {
         System.out.println("Introduce el chip buscado: ");
         m.setChip(sc.nextLine());
         ms.buscarMascotaPorChip(m);
+    }
+
+    public static void buscarVeterinarioPorColegiado(){
+        Veterinario v = new Veterinario();
+
+        System.out.println("Introduce el número de colegiado: ");
+        v.setNumColegiado(sc.nextLine());
+        vs.buscarVeterinarioPorColegiado(v);
     }
 }

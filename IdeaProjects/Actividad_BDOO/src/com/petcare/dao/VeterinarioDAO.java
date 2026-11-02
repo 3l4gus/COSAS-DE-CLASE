@@ -2,6 +2,7 @@ package com.petcare.dao;
 
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
+import com.petcare.entity.Mascota;
 import com.petcare.entity.Veterinario;
 import com.petcare.util.ConexionDb4o;
 
@@ -47,5 +48,18 @@ public class VeterinarioDAO {
         bd.close();
 
         return existe;
+    }
+
+    public Veterinario buscarVeterinarioPorColegiado(Veterinario v) {
+        conexionDb4o = new ConexionDb4o();
+        ObjectContainer bd = conexionDb4o.abrirConexion("veterinarios.db4o");
+
+        ObjectSet<Veterinario> resultado = bd.queryByExample(v);
+
+        if(resultado.hasNext()){
+            v = resultado.next();
+            return v;
+        }
+        return null;
     }
 }

@@ -2,7 +2,6 @@ package com.petcare.dao;
 
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
-import com.petcare.entity.Mascota;
 import com.petcare.entity.Veterinario;
 import com.petcare.util.ConexionDb4o;
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejerciciosclase2_parte1.HelloController">
+   <children>
+      <VBox prefHeight="500.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="204.0" prefWidth="649.0">
+               <children>
+                  <Label styleClass="titulo" text="ELIGE UNA OPCIÓN" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="botonVentanaIntroducir" mnemonicParsing="false" onAction="#cambiarVentana" styleClass="botonGuardar" text="Introducir país" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="botonVentanaElegir" mnemonicParsing="false" onAction="#cambiarVentana" styleClass="botonGuardar" text="Elegir país" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

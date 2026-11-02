@@ -1,0 +1,51 @@
+.botonGuardar{
+    -fx-background-color: #1976D2;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-width: 2px;
+    -fx-border-color: #001055;
+    -fx-padding: 5 10 5 10;
+}
+.botonGuardar:hover {
+    -fx-background-color: #0D47A1;
+}
+.titulo{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.label{
+    -fx-font-family: "Arial";
+    -fx-text-fill: #333333;
+}
+.textField{
+    -fx-background-color: #efefef;
+    -fx-border-color: #2b2b2b;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 6px;
+}
+.textField:hover{
+    -fx-background-color: white;
+}
+#labelError{
+    -fx-text-fill: #ff0000;
+}
+.textArea{
+    -fx-font-size: 13px;
+    -fx-border-color: #2b2b2b;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+}
+.textArea .content{
+    -fx-background-color: #FFFFC5;
+}
+.comboBox{
+    -fx-background-color: white;
+    -fx-border-color: #2b2b2b;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}

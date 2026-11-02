@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejerciciosclase2_parte1.HelloController">
+   <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox alignment="TOP_CENTER" prefHeight="49.0" prefWidth="388.0">
+      <children>
+         <Label styleClass="titulo" text="PAÍSES" textAlignment="CENTER">
+         </Label>
+      </children></HBox>
+   <HBox prefHeight="30.0" prefWidth="200.0">
+      <children>
+          <Label styleClass="label" text="Nombre:     " />
+         <TextField fx:id="TextFieldNombre" styleClass="textField" />
+      </children>
+   </HBox>
+   <HBox prefHeight="30.0" prefWidth="200.0">
+      <children>
+         <Label styleClass="label" text="Población:   " />
+         <TextField fx:id="TextFieldPoblacion" styleClass="textField" />
+      </children>
+   </HBox>
+   <HBox prefHeight="30.0" prefWidth="200.0">
+      <children>
+         <Label styleClass="label" text="Idioma:       " />
+         <TextField fx:id="TextFieldIdioma" styleClass="textField" />
+      </children>
+   </HBox>
+   <HBox prefHeight="30.0" prefWidth="200.0">
+      <children>
+         <Label styleClass="label" text="Moneda:     " />
+         <TextField fx:id="TextFieldMoneda" styleClass="textField" />
+      </children>
+   </HBox>
+   <HBox prefHeight="30.0" prefWidth="200.0">
+      <children>
+         <Label styleClass="label" text="Continente: " />
+         <TextField fx:id="TextFieldContinente" styleClass="textField" />
+      </children>
+   </HBox>
+   <Label id="labelError" fx:id="labelError" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="503.0" textFill="RED" />
+    <Button styleClass="botonGuardar" onAction="#onGuardarButtonClick" text="Guardar" />
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button styleClass="botonGuardar" fx:id="botonAtras" mnemonicParsing="false" onAction="#cambiarVentana" text="Atrás" />
+      </children>
+   </HBox>
+</VBox>

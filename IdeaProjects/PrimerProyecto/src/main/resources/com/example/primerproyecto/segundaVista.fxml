@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.primerproyecto.SegundaVistaController">
+   <children>
+      <VBox layoutX="60.0" prefHeight="200.0" prefWidth="310.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="376.0">
+               <children>
+                  <Label text="Nombre:   " textAlignment="CENTER" />
+                  <TextField fx:id="textFieldNombre" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label text="Apellidos: " />
+                  <TextField fx:id="textFieldApellidos" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="50.0">
+               <children>
+                  <Label text="Edad:        " />
+                  <TextField fx:id="textFieldEdad" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+      </VBox>
+      <Button alignment="BOTTOM_RIGHT" layoutX="300.0" layoutY="180.0" mnemonicParsing="false" onAction="#rellenarTextArea" text="Button" />
+      <Label fx:id="labelError" layoutX="300.0" layoutY="220.0" />
+      <TextArea fx:id="textArea" layoutX="51.0" layoutY="250.0" prefHeight="100.0" prefWidth="310.0" />
+      <ComboBox fx:id="comboBox" onAction="#cambiarValorCombo" prefWidth="150.0" />
+      <VBox layoutX="14.0" layoutY="157.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <RadioButton fx:id="nombre" mnemonicParsing="false" text="Hombre">
+               <toggleGroup>
+                  <ToggleGroup fx:id="sexo" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="mujer" mnemonicParsing="false" text="Mujer" toggleGroup="$sexo" />
+            <CheckBox fx:id="checkBox" mnemonicParsing="false" text="Aceptar términos" />
+            <Button mnemonicParsing="false" onAction="#comprobarEstado" text="Button" />
+            <Button mnemonicParsing="false" onAction="#cambiarVentana" text="Cambiar Ventana" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

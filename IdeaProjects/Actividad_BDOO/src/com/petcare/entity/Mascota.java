@@ -1,12 +1,15 @@
 package com.petcare.entity;
 
 public class Mascota {
+
+    // Atributos
     private int id;
     private String chip;
     private String nombre;
     private String especie;
     private int edad;
 
+    // Constructores
     public Mascota(String chip, String nombre, String especie, int edad) {
         this.chip = chip;
         this.nombre = nombre;
@@ -17,6 +20,7 @@ public class Mascota {
     public Mascota() {
     }
 
+    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -57,9 +61,13 @@ public class Mascota {
         this.edad = edad;
     }
 
+    // Método que devuelve los datos en formato texto
     @Override
     public String toString() {
-        return "ID: " + id + " - Chip: " + chip + " - Nombre: " + nombre +
-                " - Espcecie: " + especie + " - Edad: " + edad;
+        return "ID: " + id +
+                " - Chip: " + chip +
+                " - Nombre: " + nombre +
+                " - Especie: " + especie +
+                " - Edad: " + edad;
     }
 }

@@ -1,11 +1,14 @@
 package com.petcare.entity;
 
 public class Veterinario {
+
+    // Atributos
     private int id;
     private String numColegiado;
     private String nombre;
     private String especialidad;
 
+    // Constructores
     public Veterinario(String numColegiado, String nombre, String especialidad) {
         this.numColegiado = numColegiado;
         this.nombre = nombre;
@@ -15,6 +18,7 @@ public class Veterinario {
     public Veterinario() {
     }
 
+    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -47,9 +51,12 @@ public class Veterinario {
         this.especialidad = especialidad;
     }
 
+    // Método que devuelve los datos en formato texto
     @Override
     public String toString() {
-        return "ID: " + id + " - Número colegiado: " + numColegiado + " - Nombre: " +
-                nombre + " - Especialidad: " + especialidad;
+        return "ID: " + id +
+                " - Número colegiado: " + numColegiado +
+                " - Nombre: " + nombre +
+                " - Especialidad: " + especialidad;
     }
 }

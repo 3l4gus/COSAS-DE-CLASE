@@ -2,7 +2,6 @@ package com.petcare.dao;
 
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
-import com.petcare.entity.Mascota;
 import com.petcare.entity.Veterinario;
 import com.petcare.util.ConexionDb4o;
 
@@ -41,6 +40,7 @@ public class VeterinarioDAO {
                 maxId = v.getId();
             }
         }
+        bd.close();
         return maxId + 1;
     }
 
@@ -71,8 +71,10 @@ public class VeterinarioDAO {
         // Si existe una coincidencia, devuelve el veterinario encontrado
         if(resultado.hasNext()){
             v = resultado.next();
+            bd.close();
             return v;
         }
+        bd.close();
         return null;
     }
 

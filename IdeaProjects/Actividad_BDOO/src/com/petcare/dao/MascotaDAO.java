@@ -42,6 +42,7 @@ public class MascotaDAO {
         }
 
         // Devuelve el siguiente ID
+        bd.close();
         return maxId + 1;
     }
 
@@ -72,8 +73,10 @@ public class MascotaDAO {
         // Si existe una coincidencia, devuelve la mascota encontrada
         if(resultado.hasNext()){
             m = resultado.next();
+            bd.close();
             return m;
         }
+        bd.close();
         return null;
     }
 

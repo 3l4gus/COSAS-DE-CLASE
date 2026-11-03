@@ -1,0 +1,23 @@
+package ejercicios;
+
+public class Ejercicio3 {
+	public static void main(String[] args) {
+		Runnable tarea = new Runnable() {
+			@Override
+			public void run() {
+				System.out.println(Thread.currentThread().getName() + " tiene el estado: "
+			+ Thread.currentThread().getState() + " y su id es: " + Thread.currentThread().getId());
+				
+			}
+		};
+		empezarHilo(tarea, "Roberto");
+		empezarHilo(tarea, "Manolo");
+		empezarHilo(tarea, "Pablo");
+	}
+	
+	public static void empezarHilo(Runnable tarea, String nombre) {
+		Thread hilo = new Thread(tarea, nombre);
+		hilo.start();
+	}
+
+}

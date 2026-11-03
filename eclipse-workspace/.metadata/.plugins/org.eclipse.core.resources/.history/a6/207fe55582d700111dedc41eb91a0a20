@@ -1,0 +1,21 @@
+package ejercicios;
+
+public class Ejercicio1 {
+	public static void main(String[] args) {
+		Runnable tarea = new Runnable() {
+			public void run() {
+				for(int i = 1; i < 6; i++) {
+					System.out.println("Mensaje " + i + ": cositas.." + Thread.currentThread().getName());
+				}
+			}
+		};
+		empezarHilo(tarea, "Manuel");
+		empezarHilo(tarea, "Paola");
+		empezarHilo(tarea, "César");
+	}
+	
+	public static void empezarHilo(Runnable tarea, String nombre) {
+		Thread hilo = new Thread(tarea, nombre);
+		hilo.start();
+	}
+}

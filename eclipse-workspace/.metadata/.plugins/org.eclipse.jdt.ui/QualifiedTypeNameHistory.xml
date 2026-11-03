@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.Main"/>
+    <fullyQualifiedTypeName name="explicacion4.main"/>
+    <fullyQualifiedTypeName name="sun.jvm.hotspot.utilities.BitMapInterface"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="jdk.internal.misc.FileSystemOption"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+</qualifiedTypeNameHistroy>

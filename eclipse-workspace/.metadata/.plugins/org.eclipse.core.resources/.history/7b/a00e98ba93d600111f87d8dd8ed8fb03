@@ -1,0 +1,25 @@
+package explicacionHilos;
+
+public class PrimerHilo {
+	public static void main(String[] args) {
+		System.out.println("Soy el hilo principal");
+
+		Runnable tarea = new Runnable() {
+
+			@Override
+			public void run() {
+				
+				// System.out.println("Mi tarea es imprimir esto.");
+				for(int i = 0; i < 5; i++) {
+					System.out.println("Mi tarea es imprimir esto y soy el hilo " + Thread.currentThread().getName());
+				}
+			}
+		};
+		
+		Thread hilo = new Thread(tarea);
+		
+		hilo.start();
+
+		System.out.println("Fin hilo principal.");
+	}
+}

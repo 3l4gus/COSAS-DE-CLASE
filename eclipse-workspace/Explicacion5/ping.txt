@@ -1,0 +1,4 @@
+Respuesta desde 8.8.8.8: bytes=32 tiempo=14ms TTL=114
+Respuesta desde 8.8.8.8: bytes=32 tiempo=14ms TTL=114
+Respuesta desde 8.8.8.8: bytes=32 tiempo=15ms TTL=114
+Respuesta desde 8.8.8.8: bytes=32 tiempo=15ms TTL=114

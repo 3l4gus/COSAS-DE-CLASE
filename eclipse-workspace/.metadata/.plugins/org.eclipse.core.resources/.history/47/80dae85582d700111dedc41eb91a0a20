@@ -1,0 +1,44 @@
+package ejercicios;
+
+import java.io.IOException;
+
+public class Ejercicio6 {
+	public static void main(String[] args) {
+		Runnable tarea = new Runnable() {
+			@Override
+			public void run() {
+				long pid = 0;
+				if (Thread.currentThread().getName().equals("Calculadora")) {
+					System.out.println("Hilo " + Thread.currentThread().getName() + " ha iniciado la Calculadora.");
+					pid = crearProcesos("calc.exe");
+					System.out.println("PID de la " + Thread.currentThread().getName() + ": " + pid);
+				}else {
+					System.out.println("Hilo " + Thread.currentThread().getName() + " ha iniciado el Bloc de notas.");
+					pid = crearProcesos("notepad");
+					System.out.println("PID del " + Thread.currentThread().getName() + ": " + pid);
+				}
+
+			}
+		};
+		empezarHilo(tarea, "Calculadora");
+		empezarHilo(tarea, "Bloc");
+		System.out.println("¡El centro de mando ha iniciado los programas!");
+	}
+
+	public static void empezarHilo(Runnable tarea, String nombre) {
+		Thread hilo = new Thread(tarea, nombre);
+		hilo.start();
+	}
+
+	public static long crearProcesos(String comando) {
+		long pid = 0;
+		ProcessBuilder pb = new ProcessBuilder("cmd", "/c", comando);
+		try {
+			Process p = pb.start();
+			pid = p.pid();
+		} catch (IOException e) {
+			System.out.println("Error.");
+		}
+		return pid;
+	}
+}

@@ -1,0 +1,30 @@
+package ejercicios;
+
+public class Ejercicio5 {
+	public static void main(String[] args) {
+		Runnable tarea = new Runnable() {
+			@Override
+			public void run() {
+				for(int i = 1; i < 8; i++) {
+					if(i == 1) {
+						System.out.println(Thread.currentThread().getName() + " empieza la carrera!");
+					}else if(i == 7) {
+						System.out.println(Thread.currentThread().getName() + " ha terminado la carrera!");
+					}else {
+						System.out.println(Thread.currentThread().getName() + " - paso " + (i - 1));
+					}
+				}
+				
+			}
+		};
+		System.out.println("¡Carrera iniciada!");
+		empezarHilo(tarea, "Robot 1");
+		empezarHilo(tarea, "Robot 2");
+		empezarHilo(tarea, "Robot 3");
+	}
+	
+	public static void empezarHilo(Runnable tarea, String nombre) {
+		Thread hilo = new Thread(tarea, nombre);
+		hilo.start();
+	}
+}

@@ -1,0 +1,39 @@
+package ejercicios;
+
+import java.io.IOException;
+
+public class Ejercicio7 {
+	public static void main(String[] args) {
+		Runnable tarea = new Runnable() {
+			@Override
+			public void run() {
+				if (Thread.currentThread().getName().equals("Diagnóstico A")) {
+					System.out.println("Hilo " + Thread.currentThread().getName() + ": iniciando date");
+					crearProcesos("date", "A");
+				}else {
+					System.out.println("Hilo " + Thread.currentThread().getName() + ": iniciando hostname");
+					crearProcesos("hostname", "B");
+				}
+			}
+		};
+		empezarHilo(tarea, "Diagnóstico A");
+		empezarHilo(tarea, "Diagnóstico B");
+		System.out.println("Centro de diagnóstico iniciado.");
+	}
+	
+	public static void empezarHilo(Runnable tarea, String nombre) {
+		Thread hilo = new Thread(tarea, nombre);
+		hilo.start();
+	}
+
+	public static void crearProcesos(String comando, String letra) {
+		ProcessBuilder pb = new ProcessBuilder("cmd", "/c", comando);
+		pb.inheritIO();
+		try {
+			Process p = pb.start();
+			System.out.println("PID del proceso " + letra + ": " + p.pid());
+		} catch (IOException e) {
+			System.out.println("Error.");
+		}
+	}
+}

@@ -15,7 +15,7 @@ public class VeterinarioDAO {
     // Método que registra un nuevo veterinario asignándole automáticamente un ID
     public boolean registrarVeterinario(Veterinario v){
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("veterinarios.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         // Calcula el siguiente ID disponible y lo asigna al veterinario
         int id = calcularIDVeterinario(bd);
@@ -40,14 +40,13 @@ public class VeterinarioDAO {
                 maxId = v.getId();
             }
         }
-        bd.close();
         return maxId + 1;
     }
 
     // Método que comprueba si ya existe un veterinario con el número de colegiado indicado
     public boolean buscarNumColegiado(String numColegiado) {
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("veterinarios.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         // Creamos un veterinario provisional solo con el número de colegiado para buscar por ese campo.
         Veterinario veterinario = new Veterinario();
@@ -64,7 +63,7 @@ public class VeterinarioDAO {
     // Método que busca un veterinario por el número de colegiado del objeto recibido
     public Veterinario buscarVeterinarioPorColegiado(Veterinario v) {
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("veterinarios.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         ObjectSet<Veterinario> resultado = bd.queryByExample(v);
 
@@ -81,7 +80,7 @@ public class VeterinarioDAO {
     // Método que devuelve una lista con todos los veterinarios guardados
     public ArrayList<Veterinario> listarVeterinarios() {
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("veterinarios.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         ObjectSet<Veterinario> resultado = bd.queryByExample(new Veterinario());
         ArrayList<Veterinario> listaVeterinarios = new ArrayList<>();
@@ -97,7 +96,7 @@ public class VeterinarioDAO {
     // Método que modifica la especialidad de un veterinario buscado por su ID
     public boolean modificarEspecialidadVeterinario(Veterinario v) {
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("veterinarios.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         // Creamos una mascota provisional con el ID para buscar el veterinario
         Veterinario veterinarioProv = new Veterinario();
@@ -125,7 +124,7 @@ public class VeterinarioDAO {
     // Método que elimina un veterinario de la base de datos buscando por su ID
     public boolean eliminarVeterinario(Veterinario v) {
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("veterinarios.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         // Creamos una mascota provisional con el ID para buscar el veterinario
         Veterinario veterinarioProv = new Veterinario();

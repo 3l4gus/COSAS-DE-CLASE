@@ -15,7 +15,7 @@ public class MascotaDAO {
     // Método que registra una nueva mascota asignándole automáticamente un ID
     public boolean registrarMascota(Mascota m){
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("mascotas.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         // Calcula el siguiente ID disponible y lo asigna a la mascota
         int id = calcularIDMascota(bd);
@@ -42,14 +42,13 @@ public class MascotaDAO {
         }
 
         // Devuelve el siguiente ID
-        bd.close();
         return maxId + 1;
     }
 
     // Método que comprueba si ya existe una mascota con el chip indicado
     public boolean buscarChip(String chip) {
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("mascotas.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         // Creamos una mascota provisional solo con el chip para buscar por ese campo.
         Mascota mascota = new Mascota();
@@ -66,7 +65,7 @@ public class MascotaDAO {
     // Método que busca una mascota por el chip del objeto recibido
     public Mascota buscarMascotaPorChip(Mascota m) {
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("mascotas.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         ObjectSet<Mascota> resultado = bd.queryByExample(m);
 
@@ -83,7 +82,7 @@ public class MascotaDAO {
     // Método que devuelve una lista con todas las mascotas guardadas
     public ArrayList<Mascota> listarMascotas() {
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("mascotas.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         ObjectSet<Mascota> resultado = bd.queryByExample(new Mascota());
         ArrayList<Mascota> listaMascotas = new ArrayList<>();
@@ -99,7 +98,7 @@ public class MascotaDAO {
     // Método que modifica el nombre o la edad de una mascota buscada por su ID
     public boolean modificarDatosMascota(Mascota m, int opcion) {
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("mascotas.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         // Creamos una mascota provisional con el ID para buscar la mascota
         Mascota mascotaProv = new Mascota();
@@ -132,7 +131,7 @@ public class MascotaDAO {
     // Método que elimina una mascota de la base de datos buscando por su ID
     public boolean eliminarMascota(Mascota m) {
         conexionDb4o = new ConexionDb4o();
-        ObjectContainer bd = conexionDb4o.abrirConexion("mascotas.db4o");
+        ObjectContainer bd = conexionDb4o.abrirConexion();
 
         // Creamos una mascota provisional con el ID para buscar la mascota
         Mascota mascotaProv = new Mascota();

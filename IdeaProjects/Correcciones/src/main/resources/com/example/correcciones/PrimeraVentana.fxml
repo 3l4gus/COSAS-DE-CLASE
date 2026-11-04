@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.correcciones.PrimeraVentanaController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="300.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label text="Nombre">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtNombre" />
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets top="10.0" />
+               </opaqueInsets>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label text="Edad">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtEdad" />
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin></HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label text="Correo">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtCorreo">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#generarPDF" text="PDF">
+                     <HBox.margin>
+                        <Insets left="20.0" right="70.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#generarExcel" text="EXCEL" />
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding></VBox>
+      <Button layoutX="300.0" layoutY="100.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/icono_persona.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

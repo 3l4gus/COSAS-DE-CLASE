@@ -1,0 +1,22 @@
+.botonAzul{
+    -fx-background-color: #1976D2;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-width: 1px;
+    -fx-border-color: #001055;
+    -fx-padding: 5 10 5 10;
+}
+.botonGris{
+    -fx-background-color: #dbdbdb;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-width: 1px;
+    -fx-border-color: #404040;
+    -fx-padding: 5 10 5 10;
+}

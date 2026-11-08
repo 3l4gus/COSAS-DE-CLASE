@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.org.eclipse.egit.core.cmp.iml" filepath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.org.eclipse.egit.core.cmp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Boletin4/Boletin4.iml" filepath="$PROJECT_DIR$/Boletin4/Boletin4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BoletinRepaso_1Trimestre/BoletinRepaso_1Trimestre.iml" filepath="$PROJECT_DIR$/BoletinRepaso_1Trimestre/BoletinRepaso_1Trimestre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ejercicio1/Ejercicio1.iml" filepath="$PROJECT_DIR$/Ejercicio1/Ejercicio1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Explicacion2/Explicacion2.iml" filepath="$PROJECT_DIR$/Explicacion2/Explicacion2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Explicacion3/Explicacion3.iml" filepath="$PROJECT_DIR$/Explicacion3/Explicacion3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Explicacion4/Explicacion4.iml" filepath="$PROJECT_DIR$/Explicacion4/Explicacion4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Explicacion5/Explicacion5.iml" filepath="$PROJECT_DIR$/Explicacion5/Explicacion5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExplicacionHilos/ExplicacionHilos.iml" filepath="$PROJECT_DIR$/ExplicacionHilos/ExplicacionHilos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PT1_1Trimestre/PT1_1Trimestre.iml" filepath="$PROJECT_DIR$/PT1_1Trimestre/PT1_1Trimestre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PT1_Hilos/PT1_Hilos.iml" filepath="$PROJECT_DIR$/PT1_Hilos/PT1_Hilos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PT2_1Trimestre/PT2_1Trimestre.iml" filepath="$PROJECT_DIR$/PT2_1Trimestre/PT2_1Trimestre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PT2_2Trimestre/PT2_2Trimestre.iml" filepath="$PROJECT_DIR$/PT2_2Trimestre/PT2_2Trimestre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PT3_1Trimestre/PT3_1Trimestre.iml" filepath="$PROJECT_DIR$/PT3_1Trimestre/PT3_1Trimestre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PT4_1Trimestre/PT4_1Trimestre.iml" filepath="$PROJECT_DIR$/PT4_1Trimestre/PT4_1Trimestre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eclipse-workspace.iml" filepath="$PROJECT_DIR$/eclipse-workspace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/explicacion1/explicacion1.iml" filepath="$PROJECT_DIR$/explicacion1/explicacion1.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,45 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_programadores.InicioController">
+<VBox stylesheets="@estilos.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_programadores.InicioController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="65.0" prefWidth="480.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <ImageView fitHeight="57.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/icono etiqueta.png" />
+               </image>
+            </ImageView>
+            <VBox prefHeight="100.0" prefWidth="493.0">
                <children>
-                  <Label text="Label" />
+                  <Label fx:id="lblBienvenida" prefHeight="53.0" prefWidth="154.0" text="¡Bienvenido/a!" />
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="100.0" prefWidth="360.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onCerrarSesionClick" text="Cerrar sesión" />
+                  <Button mnemonicParsing="false" onAction="#onCerrarSesionClick" prefHeight="30.0" prefWidth="134.0" text="Cerrar sesión">
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icono salir.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                </children>
             </VBox>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="37.0" prefWidth="480.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="100.0" prefWidth="130.0">
                <children>
-                  <Label text="Filtrar por lenguaje:" />
+                  <Label prefHeight="25.0" prefWidth="158.0" text="Filtrar por lenguaje:" />
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="100.0" prefWidth="129.0">
                <children>
-                  <ComboBox prefWidth="150.0" />
+                  <ComboBox fx:id="cbFiltro" prefHeight="23.0" prefWidth="180.0" />
                </children>
             </VBox>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="300.0" prefWidth="480.0">
          <children>
-            <TableView prefHeight="100.0" prefWidth="242.0">
+            <TableView fx:id="tablaProgramadores" prefHeight="152.0" prefWidth="480.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Usuario" />
-                <TableColumn prefWidth="75.0" text="Género" />
-                  <TableColumn prefWidth="75.0" text="Lenguaje" />
+                <TableColumn fx:id="colUsuario" prefWidth="75.0" text="Usuario" />
+                <TableColumn fx:id="colGenero" prefWidth="75.0" text="Género" />
+                  <TableColumn fx:id="colLenguaje" prefWidth="81.0" text="Lenguaje" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -47,23 +60,35 @@
             </TableView>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="78.0" prefWidth="480.0">
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button mnemonicParsing="false" text="Editar perfil" />
+                  <Button mnemonicParsing="false" onAction="#onEditarPerfilClick" prefHeight="19.0" prefWidth="100.0" text="Editar perfil">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/icono editar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button mnemonicParsing="false" text="Excel" />
+                  <Button mnemonicParsing="false" onAction="#onExcelClick" prefHeight="37.0" prefWidth="64.0" text="Excel" />
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button mnemonicParsing="false" text="PDF" />
+                  <Button mnemonicParsing="false" onAction="#onPdfClick" prefHeight="37.0" prefWidth="60.0" text="PDF" />
                </children>
             </VBox>
+            <ImageView fitHeight="103.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/icono ordenador.png" />
+               </image>
+            </ImageView>
          </children>
       </HBox>
    </children>

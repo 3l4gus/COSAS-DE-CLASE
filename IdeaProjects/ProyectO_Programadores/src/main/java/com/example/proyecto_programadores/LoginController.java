@@ -1,5 +1,7 @@
 package com.example.proyecto_programadores;
 
+import com.example.proyecto_programadores.entity.Usuario;
+import com.example.proyecto_programadores.services.UsuarioService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginController {
+    static UsuarioService us = new UsuarioService();
+
     @FXML
     private TextField txtPasswordLogin;
 
@@ -19,6 +23,8 @@ public class LoginController {
     private TextField txtUsuarioLogin;
 
     public void onLoginBotonClick(ActionEvent actionEvent) throws IOException {
+        String usuario = txtUsuarioLogin.getText().trim();
+        String password = txtPasswordLogin.getText();
 
         // Cambiamos la vista
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("inicio.fxml"));

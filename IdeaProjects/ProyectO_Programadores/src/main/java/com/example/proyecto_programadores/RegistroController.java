@@ -1,5 +1,6 @@
 package com.example.proyecto_programadores;
 
+import com.example.proyecto_programadores.services.UsuarioService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class RegistroController {
+    static UsuarioService us = new UsuarioService();
 
     @FXML
     private TextField txtNombreRegistro;
@@ -40,6 +42,7 @@ public class RegistroController {
     private Button btnIrLogin;
 
     public void onRegistrarBotonClick(ActionEvent actionEvent) {
+
     }
 
     public void onVolverAlLoginBotonClick(ActionEvent actionEvent) throws IOException {

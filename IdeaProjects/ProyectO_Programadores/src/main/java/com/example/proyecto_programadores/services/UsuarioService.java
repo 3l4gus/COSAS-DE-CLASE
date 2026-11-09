@@ -12,6 +12,7 @@ public class UsuarioService {
     // si alguno no es válido
     public String validarLogin(String nombre, String contrasena) {
         String error = validarNombre(nombre);
+
         if (error == null){
             error = validarContrasena(contrasena);
         }
@@ -24,6 +25,7 @@ public class UsuarioService {
         if (nombre == null || nombre.isEmpty()) {
             return "El nombre de usuario no puede estar vacío.";
         }
+
         if (nombre.length() < 5) {
             return "El nombre de usuario debe tener al menos 5 caracteres.";
         }
@@ -80,7 +82,41 @@ public class UsuarioService {
         return null;
     }
 
+    // Método para validar que el nombre no está en la base de datos
+    private String validarNombreNoRepetido(String nombre) {
+        if (UsuarioDAO.consultarNombre(nombre) != null) {
+            return "Ya existe un usuario con ese nombre.";
+        }
+        return null;
+    }
+
     public Usuario login(String nombre, String contrasena) {
         return UsuarioDAO.comprobarUsuario(nombre, contrasena);
+    }
+
+    public String validarRegistro(String nombre, String contrasena, String genero, String lenguaje) {
+        String error = validarNombre(nombre);
+
+        if (error == null) {
+            error = validarNombreNoRepetido(nombre);
+        }
+
+        if (error == null) {
+            error = validarContrasena(contrasena);
+        }
+
+        if (error == null) {
+            error = validarGenero(genero);
+        }
+
+        if (error == null) {
+            error = validarLenguaje(lenguaje);
+        }
+        return error;
+    }
+
+    public void registrarUsuario(Usuario u) {
+        UsuarioDAO.registrarUsuario(u);
+
     }
 }

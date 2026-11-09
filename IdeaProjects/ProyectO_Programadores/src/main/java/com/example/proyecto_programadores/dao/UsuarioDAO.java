@@ -37,4 +37,25 @@ public class UsuarioDAO {
 
         return null;
     }
+
+    public Usuario consultarNombre(String nombre) {
+        conexionDb4o = new ConexionDb4o();
+        ObjectContainer bd = conexionDb4o.abrirConexion();
+
+        Usuario u = buscarPorNombre(bd, nombre);
+
+        bd.close();
+        return u;
+    }
+
+    // Método que guarda un nuevo usuario en la base de datos
+    public void registrarUsuario(Usuario u) {
+        conexionDb4o = new ConexionDb4o();
+        ObjectContainer bd = conexionDb4o.abrirConexion();
+
+        bd.store(u);
+        bd.commit();
+
+        bd.close();
+    }
 }

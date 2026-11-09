@@ -28,6 +28,7 @@ public class LoginController {
 
         // Validamos el formato de los datos, si no lo es mostrará una ventana emergente de error
         String error = us.validarLogin(nombre, contrasena);
+
         if (error != null) {
             mostrarAlerta(Alert.AlertType.ERROR, "Error", error);
             return;

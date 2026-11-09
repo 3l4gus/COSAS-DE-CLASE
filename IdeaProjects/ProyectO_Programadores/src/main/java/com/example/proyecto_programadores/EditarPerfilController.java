@@ -9,8 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
-
-import java.awt.*;
+import javafx.scene.control.TextField;
 import java.io.IOException;
 
 public class EditarPerfilController {

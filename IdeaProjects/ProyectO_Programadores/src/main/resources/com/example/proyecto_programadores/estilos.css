@@ -9,6 +9,9 @@
     -fx-border-color: #001055;
     -fx-padding: 5 10 5 10;
 }
+.botonAzul:hover {
+    -fx-background-color: #0D47A1;
+}
 .botonGris{
     -fx-background-color: #dbdbdb;
     -fx-font-size: 14px;
@@ -19,4 +22,20 @@
     -fx-border-width: 1px;
     -fx-border-color: #404040;
     -fx-padding: 5 10 5 10;
+}
+.botonGris:hover{
+    -fx-background-color: #ffffff;
+}
+.fondoAzul{
+    -fx-background-color: #1540c8;
+}
+.fondoBase{
+    -fx-background-color: #d4ddff;
+}
+#fondoBordesRedondos{
+    -fx-background-color: #aecae3;
+    -fx-background-radius: 6;
+}
+.bordesRedondos{
+    -fx-background-radius: 6;
 }

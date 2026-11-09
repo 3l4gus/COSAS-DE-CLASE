@@ -51,7 +51,7 @@ public class InicioController {
     public void onEditarPerfilClick(ActionEvent actionEvent) throws IOException {
 
         // Cambiamos la vista
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("editarPerfil.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 300);
 
         Stage stage = (Stage) ((Node) (actionEvent.getSource())).getScene().getWindow();

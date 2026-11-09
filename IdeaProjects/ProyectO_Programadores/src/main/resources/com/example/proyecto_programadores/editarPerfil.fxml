@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox prefHeight="300.0" prefWidth="600.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_programadores.EditarPerfilController">
+<HBox prefHeight="300.0" prefWidth="600.0" styleClass="fondoBase" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_programadores.EditarPerfilController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="187.0">
          <children>
@@ -122,7 +122,7 @@
                   </VBox>
                   <VBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="245.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onCancelarClick" prefHeight="35.0" prefWidth="120.0" styleClass="botonGris" text="Cancelar">
+                        <Button mnemonicParsing="false" onAction="#onCancelarClick" prefHeight="27.0" prefWidth="112.0" styleClass="botonGris" text="Cancelar">
                            <graphic>
                               <ImageView fitHeight="26.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

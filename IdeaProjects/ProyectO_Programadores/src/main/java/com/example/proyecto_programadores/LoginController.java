@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -23,8 +23,23 @@ public class LoginController {
     private TextField txtUsuarioLogin;
 
     public void onLoginBotonClick(ActionEvent actionEvent) throws IOException {
-        String usuario = txtUsuarioLogin.getText().trim();
-        String password = txtPasswordLogin.getText();
+        String nombre = txtUsuarioLogin.getText().trim();
+        String contrasena = txtPasswordLogin.getText();
+
+        // Validamos el formato de los datos, si no lo es mostrará una ventana emergente de error
+        String error = us.validarLogin(nombre, contrasena);
+        if (error != null) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Error", error);
+            return;
+        }
+
+        // Comprobamos los datos del usuario en la base de datos, si el usuario no existe mostrará
+        // una ventana emergente de error
+        Usuario u = us.login(nombre, contrasena);
+        if (u == null) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Error", "Usuario o contraseña incorrectos.");
+            return;
+        }
 
         // Cambiamos la vista
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("inicio.fxml"));
@@ -34,6 +49,7 @@ public class LoginController {
 
         stage.setScene(scene);
         stage.show();
+
     }
 
     public void onRegistrarseBotonClick(ActionEvent actionEvent) throws IOException {
@@ -46,5 +62,12 @@ public class LoginController {
 
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle(titulo);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 }

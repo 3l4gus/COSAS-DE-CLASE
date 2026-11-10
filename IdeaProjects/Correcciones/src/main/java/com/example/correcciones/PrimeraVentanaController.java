@@ -27,6 +27,25 @@ public class PrimeraVentanaController {
 
         String correo = txtCorreo.getText().trim();
 
+        try {
+            GenerarPDF.generarPDF(nombre,edad, correo);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Error pdf");
+        }
+
+
+//        String texto = "hoLa123";
+
+//otra forma
+//        if(!texto.equals(texto.toLowerCase()) ){
+//            System.out.println("Hay mayusculas");
+//        }
+//
+//        if(!texto.equals(texto.toUpperCase()) ){
+//            System.out.println("Hay minusculas");
+//        }
+
        /*
         * String texto = "hola123";
 
@@ -81,6 +100,12 @@ public class PrimeraVentanaController {
 
         String correo = txtCorreo.getText().trim();
 
+
+        try {
+            GenerarExcel.generarExcel(nombre,edad,correo);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }

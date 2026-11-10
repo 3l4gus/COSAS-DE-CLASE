@@ -1,6 +1,5 @@
 package com.example.proyecto_programadores;
 
-import com.example.proyecto_programadores.services.UsuarioService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +12,6 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 public class EditarPerfilController {
-    static UsuarioService us = new UsuarioService();
 
     @FXML
     private TextField txtNombre;
@@ -36,22 +34,20 @@ public class EditarPerfilController {
     public void onGuardarCambiosClick(ActionEvent actionEvent) throws IOException {
 
         // Cambiamos la vista
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("inicio.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 480, 480);
-
-        Stage stage = (Stage) ((Node) (actionEvent.getSource())).getScene().getWindow();
-
-        stage.setScene(scene);
-        stage.show();
+        cambiarVista(actionEvent, "inicio.fxml", 480, 480);
     }
 
     public void onCancelarClick(ActionEvent actionEvent) throws IOException {
 
         // Cambiamos la vista
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("inicio.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 480, 480);
+        cambiarVista(actionEvent, "inicio.fxml", 480, 480);
+    }
 
-        Stage stage = (Stage) ((Node) (actionEvent.getSource())).getScene().getWindow();
+    public void cambiarVista(ActionEvent actionEvent, String fxml, int ancho, int alto) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml));
+        Scene scene = new Scene(fxmlLoader.load(), ancho, alto);
+
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
 
         stage.setScene(scene);
         stage.show();

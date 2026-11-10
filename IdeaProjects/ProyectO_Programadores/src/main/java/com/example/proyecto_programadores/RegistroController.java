@@ -1,7 +1,7 @@
 package com.example.proyecto_programadores;
 
+import com.example.proyecto_programadores.dao.UsuarioDAO;
 import com.example.proyecto_programadores.entity.Usuario;
-import com.example.proyecto_programadores.services.UsuarioService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class RegistroController {
-    static UsuarioService us = new UsuarioService();
 
     @FXML
     private TextField txtNombreRegistro;
@@ -34,7 +33,7 @@ public class RegistroController {
     private ComboBox<String> cbLenguajeRegistro;
 
     @FXML
-    private void initialize() {
+    public void initialize() {
         cbLenguajeRegistro.getItems().addAll("Java", "Python", "JavaScript");
     }
 
@@ -46,7 +45,7 @@ public class RegistroController {
 
         // Validamos el formato de los datos, si alguno no es válido se guardará un String en error y
         // mostrará una ventana emergente de error
-        String error = us.validarRegistro(nombre, contrasena, genero, lenguaje);
+        String error = validarRegistro(nombre, contrasena, genero, lenguaje);
 
         if (error != null) {
             mostrarAlerta(Alert.AlertType.ERROR, "Error", error);
@@ -56,7 +55,11 @@ public class RegistroController {
         // Al ser todo válido guardamos el usuario en la base de datos, mostramos una ventana emergente
         // confirmando que se ha registrado y volvemos al login
         Usuario u = new Usuario(nombre, contrasena, genero, lenguaje);
-        us.registrar(u);
+
+        if (!registrar(u)) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Error", "No se ha podido registrar el usuario.");
+            return;
+        }
         mostrarAlerta(Alert.AlertType.INFORMATION, "Registro", "Usuario registrado correctamente.");
 
         volverAlLogin(actionEvent);
@@ -67,21 +70,112 @@ public class RegistroController {
         volverAlLogin(actionEvent);
     }
 
-    private void volverAlLogin(ActionEvent actionEvent) throws IOException {
+    public String validarRegistro(String nombre, String contrasena, String genero, String lenguaje) {
+        String error = validarNombre(nombre);
 
-        // Cambiamos la vista
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 450, 550);
+        if (error == null) {
+            error = validarNombreNoRepetido(nombre);
+        }
 
-        Stage stage = (Stage) ((Node) (actionEvent.getSource())).getScene().getWindow();
+        if (error == null) {
+            error = validarContrasena(contrasena);
+        }
 
-        stage.setScene(scene);
-        stage.show();
+        if (error == null) {
+            error = validarGenero(genero);
+        }
+
+        if (error == null) {
+            error = validarLenguaje(lenguaje);
+        }
+
+        return error;
     }
 
-    // Método para obtener el género que se ha seleccionado de los RadioButton y devolverá su texto o null
-    // si no se ha seleccionado ninguno
-    private String obtenerGeneroSeleccionado() {
+    // Método para validar que el nombre no esté vacío y tenga al menos 5 caracteres
+    public String validarNombre(String nombre) {
+        if (nombre == null || nombre.isEmpty()) {
+            return "El nombre de usuario no puede estar vacío.";
+        }
+
+        if (nombre.length() < 5) {
+            return "El nombre de usuario debe tener al menos 5 caracteres.";
+        }
+
+        return null;
+    }
+
+    // Método para validar que el nombre no está en la base de datos
+    public String validarNombreNoRepetido(String nombre) {
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+        if (usuarioDAO.consultarNombre(nombre) != null) {
+            return "Ya existe un usuario con ese nombre.";
+        }
+
+        return null;
+    }
+
+    // Método para validar que la contraseña tiene al menos 8 caracteres, una mayúscula y
+    // una minúscula
+    public String validarContrasena(String contrasena) {
+        if (contrasena == null || contrasena.length() < 8) {
+            return "La contraseña debe tener al menos 8 caracteres.";
+        }
+
+        boolean tieneMayuscula = false;
+        boolean tieneMinuscula = false;
+
+        for (int i = 0; i < contrasena.length(); i++) {
+            char caracter = contrasena.charAt(i);
+
+            if (Character.isUpperCase(caracter)) {
+                tieneMayuscula = true;
+            } else if (Character.isLowerCase(caracter)) {
+                tieneMinuscula = true;
+            }
+
+            if (tieneMayuscula && tieneMinuscula) {
+                break;
+            }
+        }
+
+        if (!tieneMayuscula) {
+            return "La contraseña debe contener al menos una mayúscula.";
+        }
+
+        if (!tieneMinuscula) {
+            return "La contraseña debe contener al menos una minúscula.";
+        }
+
+        return null;
+    }
+
+    // Método para validar que hay un género seleccionado
+    public String validarGenero(String genero) {
+        if (genero == null) {
+            return "Selecciona un género.";
+        }
+
+        return null;
+    }
+
+    // Método para validar que hay un lenguaje seleccionado
+    public String validarLenguaje(String lenguaje) {
+        if (lenguaje == null) {
+            return "Selecciona un lenguaje.";
+        }
+
+        return null;
+    }
+
+    public boolean registrar(Usuario u) {
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.registrarUsuario(u);
+        return true;
+    }
+
+    public String obtenerGeneroSeleccionado() {
         if (rbHombre.isSelected()) {
             return rbHombre.getText();
         }
@@ -97,7 +191,17 @@ public class RegistroController {
         return null;
     }
 
-    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+    public void volverAlLogin(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 450, 550);
+
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titulo);
         alert.setContentText(mensaje);

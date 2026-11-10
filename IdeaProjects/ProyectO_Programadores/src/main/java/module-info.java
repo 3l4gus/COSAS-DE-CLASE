@@ -7,5 +7,6 @@ module com.example.proyecto_programadores {
 
 
     opens com.example.proyecto_programadores to javafx.fxml;
+    opens com.example.proyecto_programadores.entity to db4o;
     exports com.example.proyecto_programadores;
 }

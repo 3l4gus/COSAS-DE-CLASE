@@ -61,14 +61,14 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="100.0" prefWidth="129.0">
                <children>
-                  <ComboBox fx:id="cbFiltro" prefHeight="23.0" prefWidth="180.0" />
+                  <ComboBox fx:id="cbFiltroLenguaje" onAction="#cambiarFiltroLenguaje" prefHeight="23.0" prefWidth="180.0" />
                </children>
             </VBox>
          </children>
       </HBox>
       <HBox prefHeight="300.0" prefWidth="480.0" styleClass="fondoBase">
          <children>
-            <TableView styleClass="bordesRedondos" fx:id="tablaProgramadores" prefHeight="152.0" prefWidth="480.0">
+            <TableView fx:id="tablaProgramadores" prefHeight="152.0" prefWidth="480.0" styleClass="bordesRedondos">
               <columns>
                 <TableColumn fx:id="colUsuario" prefWidth="75.0" text="Usuario" />
                 <TableColumn fx:id="colGenero" prefWidth="75.0" text="Género" />

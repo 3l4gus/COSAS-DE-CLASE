@@ -5,6 +5,8 @@ import com.db4o.ObjectSet;
 import com.example.proyecto_programadores.entity.Usuario;
 import com.example.proyecto_programadores.util.ConexionDb4o;
 
+import java.util.ArrayList;
+
 public class UsuarioDAO {
 
     // Objeto utilizado para abrir conexiones con la base de datos
@@ -57,5 +59,39 @@ public class UsuarioDAO {
         bd.commit();
 
         bd.close();
+    }
+
+    // Método que devuelve una lista con los programadores del lenguaje que pasamos por parámetro.
+    // Con "Todos" devuelve todos menos el usuario indicado en 'excluir'
+    public ArrayList<Usuario> listarPorLenguaje(String lenguaje, String excluir) {
+        conexionDb4o = new ConexionDb4o();
+        ObjectContainer bd = conexionDb4o.abrirConexion();
+
+        // Creamos un usuario provisional para guardar el lenguaje pasado por parámetro en él
+        // si este no es "Todos"
+        Usuario usuarioProv = new Usuario();
+
+        if (!lenguaje.equals("Todos")) {
+            usuarioProv.setLenguaje(lenguaje);
+        }
+
+        // Buscamos en la base de datos los usuarios que conicidan con el lenguaje buscado y los guardamos
+        // en el ObjectSet y creamos un arrayList
+        ObjectSet<Usuario> resultado = bd.queryByExample(usuarioProv);
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+
+        // Añadimos cada usuario encontrado al array
+        for (Usuario u : resultado) {
+
+            // Cuando en parámetro pasemos "Todos" no incluiremos en la lista el usuario que tenga
+            // el nombre que pasamos por parámetro el cual será el que ha iniciado sesión
+            if (lenguaje.equals("Todos") && u.getNombre().equals(excluir)) {
+                continue;
+            }
+            usuarios.add(u);
+        }
+        bd.close();
+
+        return usuarios;
     }
 }

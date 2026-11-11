@@ -42,9 +42,9 @@ public class LoginController {
             mostrarAlerta(Alert.AlertType.ERROR, "Error", "Usuario o contraseña incorrectos.");
             return;
         }
-        NombreUsuario.setNombreUsuario(nombre);
 
-        // Cambiamos la vista
+        // Guardamos el nombre del usuario para usarlo en las demás ventanas y cambiamos la vista
+        NombreUsuario.setNombreUsuario(nombre);
         cambiarVista(actionEvent, "inicio.fxml", 480, 480);
 
     }

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bcj7sfr8t3g5"]
+
+[ext_resource type="Script" uid="uid://cl54lcv2flgs6" path="res://bala_2.gd" id="1_gtif8"]
+[ext_resource type="Texture2D" uid="uid://cieyyqqch8pxm" path="res://Sprites/bala.png" id="2_jqj5l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvqel"]
+size = Vector2(80.5, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dl11"]
+size = Vector2(80.5, 42)
+
+[node name="Node2D" type="Node2D" unique_id=438130017]
+
+[node name="Bala2" type="StaticBody2D" parent="." unique_id=1352236891]
+script = ExtResource("1_gtif8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bala2" unique_id=1349192321]
+top_level = true
+position = Vector2(800, 250)
+rotation = -1.5707964
+scale = Vector2(0.09764314, 0.09811197)
+texture = ExtResource("2_jqj5l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bala2" unique_id=1749431281]
+position = Vector2(799.75, 262)
+shape = SubResource("RectangleShape2D_uvqel")
+
+[node name="AreaMuerte" type="Area2D" parent="Bala2" unique_id=227110880]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bala2/AreaMuerte" unique_id=1450185897]
+position = Vector2(800, 262)
+shape = SubResource("RectangleShape2D_2dl11")

@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://d1p81t2uf0pel"]
+
+[ext_resource type="Texture2D" uid="uid://dl6a7dt1br1no" path="res://Sprites/Ninja_Peasant/Attack_2.png" id="1_4tsn7"]
+[ext_resource type="Script" uid="uid://fkhmibrarmwk" path="res://enemigo_estatico_1.gd" id="1_eju1p"]
+[ext_resource type="Texture2D" uid="uid://cgbwftf7ekqcu" path="res://Sprites/Ninja_Peasant/Idle.png" id="2_eju1p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eju1p"]
+height = 42.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asvie"]
+atlas = ExtResource("1_4tsn7")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntveq"]
+atlas = ExtResource("1_4tsn7")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b683"]
+atlas = ExtResource("1_4tsn7")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgtbn"]
+atlas = ExtResource("1_4tsn7")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4nsn"]
+atlas = ExtResource("2_eju1p")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmfqv"]
+atlas = ExtResource("2_eju1p")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdhwf"]
+atlas = ExtResource("2_eju1p")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmuuw"]
+atlas = ExtResource("2_eju1p")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiksw"]
+atlas = ExtResource("2_eju1p")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw2ap"]
+atlas = ExtResource("2_eju1p")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_asvie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asvie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntveq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b683")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgtbn")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4nsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmfqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdhwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmuuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiksw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw2ap")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntveq"]
+radius = 12.0
+height = 48.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6b683"]
+size = Vector2(25.5, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgtbn"]
+size = Vector2(29.5, 6.5)
+
+[node name="Node2D" type="Node2D" unique_id=1653599836]
+
+[node name="EnemigoEstatico1" type="CharacterBody2D" parent="." unique_id=1949781256]
+position = Vector2(-56, -129)
+collision_mask = 3
+script = ExtResource("1_eju1p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemigoEstatico1" unique_id=447300878]
+position = Vector2(54, 28)
+shape = SubResource("CapsuleShape2D_eju1p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EnemigoEstatico1" unique_id=1641131071]
+position = Vector2(56, 18)
+scale = Vector2(0.65, 0.65)
+sprite_frames = SubResource("SpriteFrames_asvie")
+animation = &"attack"
+
+[node name="Area2D" type="Area2D" parent="EnemigoEstatico1" unique_id=1262745899]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemigoEstatico1/Area2D" unique_id=2054298899]
+position = Vector2(54, 27)
+shape = SubResource("CapsuleShape2D_ntveq")
+
+[node name="CollisionAtaqueDer" type="CollisionShape2D" parent="EnemigoEstatico1/Area2D" unique_id=1558721535]
+position = Vector2(69.25, 24)
+shape = SubResource("RectangleShape2D_6b683")
+
+[node name="CollisionAtaqueIzq" type="CollisionShape2D" parent="EnemigoEstatico1/Area2D" unique_id=247283828]
+position = Vector2(39.75, 24)
+shape = SubResource("RectangleShape2D_dgtbn")
+
+[node name="RayCastDer" type="RayCast2D" parent="EnemigoEstatico1" unique_id=1264511404]
+position = Vector2(60, 24)
+target_position = Vector2(37, 0)
+collision_mask = 2
+
+[node name="RayCastIzq" type="RayCast2D" parent="EnemigoEstatico1" unique_id=510923207]
+position = Vector2(50, 24)
+target_position = Vector2(-40, 0)
+collision_mask = 2
+
+[connection signal="body_entered" from="EnemigoEstatico1/Area2D" to="EnemigoEstatico1" method="_on_area_2d_body_entered"]

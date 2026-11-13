@@ -37,6 +37,7 @@ public class InicioController {
     @FXML
     private TableColumn<Usuario, String> colLenguaje;
 
+    // Método que se ejecuta al abrir la pantalla de inicio
     @FXML
     public void initialize(){
 
@@ -48,24 +49,29 @@ public class InicioController {
         colGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
         colLenguaje.setCellValueFactory(new PropertyValueFactory<>("lenguaje"));
 
+        // Añadimos las opciones disponibles al filtro de lenguaje y seleccionamos "Todos" por defecto
         cbFiltroLenguaje.getItems().addAll("Todos", "Java", "Python", "JavaScript");
         cbFiltroLenguaje.setValue("Todos");
 
+        // Rellenamos la tabla con los usuarios según el filtro seleccionado
         llenarTabla();
     }
 
+    // Método que se ejecuta al hacer click en el botón de cerrar sesión
     public void onCerrarSesionClick(ActionEvent actionEvent) throws IOException {
 
         // Cambiamos la vista
         cambiarVista(actionEvent, "login.fxml", 450, 550);
     }
 
+    // Método que se ejecuta al hacer click en el botón de editar perfil
     public void onEditarPerfilClick(ActionEvent actionEvent) throws IOException {
 
         // Cambiamos la vista
         cambiarVista(actionEvent, "editarPerfil.fxml", 600, 300);
     }
 
+    // Método que se ejecuta al hacer click en el botón de generar Excel
     public void onExcelClick(ActionEvent actionEvent) {
 
         // Intentamos generar el excel y mostramos una ventana emergente confirmando si se ha logrado
@@ -79,6 +85,7 @@ public class InicioController {
         }
     }
 
+    // Método que se ejecuta al hacer click en el botón de generar PDF
     public void onPdfClick(ActionEvent actionEvent) {
 
         // Intentamos generar el PDF y mostramos una ventana emergente confirmando si se ha logrado
@@ -92,6 +99,7 @@ public class InicioController {
         }
     }
 
+    // Método que se ejecuta cuando cambiamos el lenguaje seleccionado en el filtro
     public void cambiarFiltroLenguaje(ActionEvent actionEvent) {
         llenarTabla();
     }
@@ -107,6 +115,7 @@ public class InicioController {
         tablaProgramadores.getItems().setAll(usuarios);
     }
 
+    // Método que cambia la vista actual por otra que le indicamos en los parámetros
     public void cambiarVista(ActionEvent actionEvent, String fxml, int ancho, int alto) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml));
         Scene scene = new Scene(fxmlLoader.load(), ancho, alto);
@@ -117,6 +126,7 @@ public class InicioController {
         stage.show();
     }
 
+    // Método que muestra una ventana emergente con el tipo, título y mensaje indicados
     public void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titulo);

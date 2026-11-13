@@ -22,7 +22,10 @@ public class LoginController {
     @FXML
     private TextField txtUsuarioLogin;
 
+    // Método que se ejecuta al hacer click en el botón de iniciar sesión
     public void onLoginBotonClick(ActionEvent actionEvent) throws IOException {
+
+        // Guardamos el nombre y la contraseña introducidos por el usuario
         String nombre = txtUsuarioLogin.getText().trim();
         String contrasena = txtPasswordLogin.getText();
 
@@ -49,6 +52,7 @@ public class LoginController {
 
     }
 
+    // Método que se ejecuta al hacer click en el botón de registrarse
     public void onRegistrarseBotonClick(ActionEvent actionEvent) throws IOException {
         cambiarVista(actionEvent, "registro.fxml", 450, 550);
     }
@@ -88,6 +92,7 @@ public class LoginController {
         boolean tieneMayuscula = false;
         boolean tieneMinuscula = false;
 
+        // Recorremos la contraseña para comprobar si tiene mayúsculas y minúsculas
         for (int i = 0; i < contrasena.length(); i++) {
             char caracter = contrasena.charAt(i);
 
@@ -97,6 +102,7 @@ public class LoginController {
                 tieneMinuscula = true;
             }
 
+            // Si ya hemos encontrado una mayúscula y una minúscula, dejamos de comprobar
             if (tieneMayuscula && tieneMinuscula) {
                 break;
             }
@@ -113,11 +119,13 @@ public class LoginController {
         return null;
     }
 
+    // Método que comprueba en la base de datos si el nombre y la contraseña son correctos
     public Usuario login(String nombre, String contrasena) {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         return usuarioDAO.comprobarUsuario(nombre, contrasena);
     }
 
+    // Método que cambia la vista actual por otra que le indicamos en los parámetros
     public void cambiarVista(ActionEvent actionEvent, String fxml, int ancho, int alto) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml));
         Scene scene = new Scene(fxmlLoader.load(), ancho, alto);
@@ -128,6 +136,7 @@ public class LoginController {
         stage.show();
     }
 
+    // Método que muestra una ventana emergente con el tipo, título y mensaje indicados
     public void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titulo);

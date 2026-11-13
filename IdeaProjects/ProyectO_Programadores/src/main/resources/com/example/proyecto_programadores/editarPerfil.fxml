@@ -76,7 +76,7 @@
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <TextField fx:id="txtNombre" />
+                              <TextField fx:id="txtNombre" disable="true" />
                            </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0">

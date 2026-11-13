@@ -17,29 +17,36 @@ public class UsuarioDAO {
         conexionDb4o = new ConexionDb4o();
         ObjectContainer bd = conexionDb4o.abrirConexion();
 
+        // Buscamos el usuario por su nombre
         Usuario u = buscarPorNombre(bd, nombre);
 
         bd.close();
 
+        // Si el usuario existe y la contraseña coincide, devolvemos el usuario, si no devolvemos null
         if (u != null && u.getContrasena().equals(contrasena)) {
             return u;
         }
         return null;
     }
 
-    private Usuario buscarPorNombre(ObjectContainer bd, String nombre) {
+    // Método que busca un usuario en la base de datos a partir de su nombre
+    public Usuario buscarPorNombre(ObjectContainer bd, String nombre) {
+
+        // Creamos un usuario provisional y le asignamos el nombre que queremos buscar
         Usuario usuarioBuscado = new Usuario();
         usuarioBuscado.setNombre(nombre);
 
+        // Buscamos en la base de datos los usuarios que coincidan con el nombre
         ObjectSet<Usuario> resultado = bd.queryByExample(usuarioBuscado);
 
+        // Si hemos encontrado algún usuario, devolvemos el primero, si no devolvemos null
         if (resultado.hasNext()) {
             return resultado.next();
         }
-
         return null;
     }
 
+    // Método que busca y devuelve un usuario a partir de su nombre
     public Usuario consultarNombre(String nombre) {
         conexionDb4o = new ConexionDb4o();
         ObjectContainer bd = conexionDb4o.abrirConexion();
@@ -55,6 +62,7 @@ public class UsuarioDAO {
         conexionDb4o = new ConexionDb4o();
         ObjectContainer bd = conexionDb4o.abrirConexion();
 
+        // Guardamos el usuario y confirmamos los cambios
         bd.store(u);
         bd.commit();
 
@@ -93,5 +101,24 @@ public class UsuarioDAO {
         bd.close();
 
         return usuarios;
+    }
+
+    // Método que actualiza los datos del usuario que coincide con el nombre del usuario que
+    // pasamos por parámetro
+    public void modificarUsuario(Usuario usuarioActualizado) {
+        conexionDb4o = new ConexionDb4o();
+        ObjectContainer bd = conexionDb4o.abrirConexion();
+
+        // Buscamos el usuario guardado y si existe le cambiamos los datos
+        Usuario u = buscarPorNombre(bd, usuarioActualizado.getNombre());
+        if (u != null) {
+            u.setContrasena(usuarioActualizado.getContrasena());
+            u.setGenero(usuarioActualizado.getGenero());
+            u.setLenguaje(usuarioActualizado.getLenguaje());
+
+            bd.store(u);
+            bd.commit();
+        }
+        bd.close();
     }
 }

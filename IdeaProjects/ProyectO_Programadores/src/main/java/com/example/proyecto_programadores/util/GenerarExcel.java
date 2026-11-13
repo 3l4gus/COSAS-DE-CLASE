@@ -11,11 +11,15 @@ import java.io.IOException;
 import java.util.List;
 
 public class GenerarExcel {
+
+    // Método que genera un archivo Excel con los datos de los usuarios que pasamos por parámetro
     public static void generarExcel(List<Usuario> usuarios) throws IOException {
         int numFila = 1;
 
+        // Creamos el archivo Excel donde se guardarán los datos
         FileOutputStream fos = new FileOutputStream("programadores.xlsx");
 
+        // Creamos el libro de Excel y una hoja dentro de él
         Workbook libro = new SXSSFWorkbook();
         Sheet hojas = libro.createSheet("datos_programadores");
 
@@ -36,6 +40,8 @@ public class GenerarExcel {
 
             numFila++;
         }
+
+        // Escribimos los datos en el archivo y cerramos el archivo y el libro
         libro.write(fos);
         fos.close();
         libro.close();

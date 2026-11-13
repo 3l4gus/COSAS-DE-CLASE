@@ -32,12 +32,16 @@ public class RegistroController {
     @FXML
     private ComboBox<String> cbLenguajeRegistro;
 
+    // Método que se ejecuta al abrir la ventana de registrarse
     @FXML
     public void initialize() {
         cbLenguajeRegistro.getItems().addAll("Java", "Python", "JavaScript");
     }
 
+    // Método que se ejecuta al hacer click en el botón de registrarse
     public void onRegistrarBotonClick(ActionEvent actionEvent) throws IOException {
+
+        // Guardamos los datos introducidos por el usuario
         String nombre = txtNombreRegistro.getText().trim();
         String contrasena = txtPasswordRegistro.getText();
         String lenguaje = cbLenguajeRegistro.getValue();
@@ -66,10 +70,12 @@ public class RegistroController {
 
     }
 
+    // Método que se ejecuta al hacer click en el botón de volver al login
     public void onVolverAlLoginBotonClick(ActionEvent actionEvent) throws IOException {
         volverAlLogin(actionEvent);
     }
 
+    // Método que valida todos los datos del registro.
     public String validarRegistro(String nombre, String contrasena, String genero, String lenguaje) {
         String error = validarNombre(nombre);
 
@@ -126,6 +132,7 @@ public class RegistroController {
         boolean tieneMayuscula = false;
         boolean tieneMinuscula = false;
 
+        // Recorremos la contraseña para comprobar si tiene mayúsculas y minúsculas
         for (int i = 0; i < contrasena.length(); i++) {
             char caracter = contrasena.charAt(i);
 
@@ -135,6 +142,7 @@ public class RegistroController {
                 tieneMinuscula = true;
             }
 
+            // Si ya hemos encontrado una mayúscula y una minúscula, dejamos de comprobar
             if (tieneMayuscula && tieneMinuscula) {
                 break;
             }
@@ -169,12 +177,14 @@ public class RegistroController {
         return null;
     }
 
+    // Método que guarda el usuario en la base de datos. Devuelve true si se ha registrado correctamente
     public boolean registrar(Usuario u) {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         usuarioDAO.registrarUsuario(u);
         return true;
     }
 
+    // Método que devuelve el texto del RadioButton seleccionado o null si no hay ninguno
     public String obtenerGeneroSeleccionado() {
         if (rbHombre.isSelected()) {
             return rbHombre.getText();
@@ -191,6 +201,7 @@ public class RegistroController {
         return null;
     }
 
+    // Método que cambia la vista actual por la del login
     public void volverAlLogin(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 450, 550);
@@ -201,6 +212,7 @@ public class RegistroController {
         stage.show();
     }
 
+    // Método que muestra una ventana emergente con el tipo, título y mensaje indicados
     public void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titulo);

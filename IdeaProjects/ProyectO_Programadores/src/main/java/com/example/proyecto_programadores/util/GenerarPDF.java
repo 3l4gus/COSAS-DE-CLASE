@@ -12,22 +12,27 @@ import java.io.FileOutputStream;
 import java.util.List;
 
 public class GenerarPDF {
+
+    // Método que genera un archivo PDF con los datos de los usuarios que pasamos por parámetro
     public static void generarPDF(List<Usuario> usuarios) throws FileNotFoundException {
+
+        // Creamos el documento PDF
         Document doc = new Document();
 
+        // Creamos el archivo PDF donde se guardarán los datos
         FileOutputStream fos = new FileOutputStream("programadores.pdf");
 
+        // Indicamos que el documento se escribirá en el archivo creado
         PdfWriter.getInstance(doc, fos);
 
+        // Abrimos el documento y le añadimos un título
         doc.open();
-
-        // Ponemos un título
         doc.add(new Paragraph("Listado de Programadores"));
         doc.add(new Paragraph("\n\n"));
 
+        // Creamos una tabla con 3 columanas e indicamos que la primera fila contendrá los
+        // nombres de los atributos del usuario
         PdfPTable tabla = new PdfPTable(3);
-
-        // La primera fila contendrá los nombres de los atributos del usuario
         tabla.addCell("Nombre");
         tabla.addCell("Genero");
         tabla.addCell("Lenguaje");
@@ -39,8 +44,8 @@ public class GenerarPDF {
             tabla.addCell(u.getLenguaje());
         }
 
+        // Añadimos la tabla al documento y cerramos el documento
         doc.add(tabla);
-
         doc.close();
     }
 }

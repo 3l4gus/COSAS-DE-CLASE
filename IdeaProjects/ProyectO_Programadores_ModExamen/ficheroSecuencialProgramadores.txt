@@ -1,0 +1,3 @@
+Usuario(nombre=3l4gu, contrasena=Agus2002, genero=Hombre, lenguaje=Python)
+Usuario(nombre=ruyk1710, contrasena=Agusbb1710, genero=Hombre, lenguaje=Python)
+Usuario(nombre=jasonsito67, contrasena=AAAAaaaa1, genero=Hombre, lenguaje=Python)

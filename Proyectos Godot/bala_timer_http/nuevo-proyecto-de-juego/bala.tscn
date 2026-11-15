@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://qqy73qx0wyia"]
+
+[ext_resource type="Script" uid="uid://d18udnhx43ueo" path="res://bala.gd" id="1_ag3k0"]
+[ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_jk513"]
+
+[node name="Node2D" type="Node2D" unique_id=2077998951]
+script = ExtResource("1_ag3k0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=595406076]
+texture = ExtResource("1_jk513")

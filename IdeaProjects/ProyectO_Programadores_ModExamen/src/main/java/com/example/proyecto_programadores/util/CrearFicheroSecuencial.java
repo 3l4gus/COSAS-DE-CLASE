@@ -17,5 +17,6 @@ public class CrearFicheroSecuencial {
             bw.newLine();
         }
         bw.close();
+        fw.close();
     }
 }

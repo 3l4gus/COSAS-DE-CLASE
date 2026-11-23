@@ -1,0 +1,6 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1791460753
+area_2d.gd::GDScript::7789454323125934202::1791444111::0::1::::<>Area2D<><>0<>0<><>::
+character_body_2d.gd::GDScript::6226115210122752622::1791444111::0::1::::<>CharacterBody2D<><>0<>0<><>::
+icon.svg::CompressedTexture2D::7279688781032052240::1791443185::1791443191::1::::<><><>0<>0<>baf51178758bf03d45434590a16ae8cb<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+node_2d.tscn::PackedScene::355073614140134992::1791444111::0::1::::<><><>0<>0<><>::uid://cux8hcj5aw3rm::::res://character_body_2d.gd<>uid://dbyln7ydm6n3m::::res://icon.svg<>uid://di8jf65m5rfs1::::res://area_2d.gd

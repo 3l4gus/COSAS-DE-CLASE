@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="350.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examennelsontrimestre1_agustinolivera.Interfaz1Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <HBox prefHeight="32.0" prefWidth="460.0">
+            <children>
+                <Label text="Examen Acceso e interfaces" />
+            </children>
+        </HBox>
+        <HBox prefHeight="39.0" prefWidth="460.0">
+            <children>
+                <Label text="Formulario de Registro">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox prefHeight="55.0" prefWidth="460.0">
+            <children>
+                <Label text="Introduce los datos y pulsa Guardar." />
+            </children>
+        </HBox>
+        <HBox prefHeight="261.0" prefWidth="460.0">
+            <children>
+                <VBox prefHeight="185.0" prefWidth="147.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label text="Contraseña:" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label text="Número:" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label text="Opción:" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="185.0" prefWidth="339.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <TextField id="pepe1"/>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <TextField id="txtNumero" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <ComboBox fx:id="cbOpciones" prefHeight="25.0" prefWidth="300.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="47.0" prefWidth="100.0">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#onGuardarButtonClick" prefHeight="30.0" prefWidth="102.0" text="Guardar" />
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </VBox>
+                                <VBox prefHeight="47.0" prefWidth="213.0">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#onVerDatosButtonClick" prefHeight="30.0" prefWidth="150.0" text="Ver datos almacenados" />
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

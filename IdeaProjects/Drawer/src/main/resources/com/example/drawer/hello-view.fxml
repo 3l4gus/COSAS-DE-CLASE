@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#cerrarDrawer" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.drawer.HelloController">
+   <children>
+      <BorderPane prefHeight="450.0" prefWidth="700.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="700.0" spacing="15.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#mostrarDrawer" text="☰" />
+                  <Label text="Mi aplicación">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <StackPane fx:id="contenedorContenido" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Hola mundo">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+      <VBox id="vBox" fx:id="drawer" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" spacing="10.0" stylesheets="@../../../css/estilo.css" StackPane.alignment="TOP_LEFT">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label alignment="TOP_CENTER" text="Menú" textFill="#f4f1f1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button id="botones" fx:id="inicio" mnemonicParsing="false" onAction="#mostrarInicio" styleClass="botones" stylesheets="@../../../css/estilo.css" text="Inicio" />
+            <Button id="botones" fx:id="segundo" mnemonicParsing="false" onAction="#mostrarSegundo" styleClass="botones" stylesheets="@../../../css/estilo.css" text="segunda" />
+            <Button fx:id="tercero" mnemonicParsing="false" styleClass="botones" stylesheets="@../../../css/estilo.css" text="tercera" />
+         </children>
+         <StackPane.margin>
+            <Insets top="50.0" />
+         </StackPane.margin>
+      </VBox>
+   </children>
+</StackPane>

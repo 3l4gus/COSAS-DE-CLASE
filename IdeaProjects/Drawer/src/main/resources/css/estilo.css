@@ -1,0 +1,13 @@
+#vBox{
+    -fx-background-color: #263746;
+
+}
+
+.botones{
+
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
+}
+

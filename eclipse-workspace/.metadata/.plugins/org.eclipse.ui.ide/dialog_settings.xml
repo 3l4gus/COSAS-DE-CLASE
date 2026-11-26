@@ -20,12 +20,15 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_SKIP_DOT_FOLDERS" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace"/>
+		</list>
 		<section name="SmartImportWizard.dialogBounds">
 			<item key="DIALOG_X_ORIGIN" value="206"/>
-			<item key="DIALOG_Y_ORIGIN" value="7"/>
-			<item key="DIALOG_WIDTH" value="882"/>
-			<item key="DIALOG_HEIGHT" value="672"/>
-			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+			<item key="DIALOG_Y_ORIGIN" value="8"/>
+			<item key="DIALOG_WIDTH" value="1061"/>
+			<item key="DIALOG_HEIGHT" value="710"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
 	</section>
 	<section name="SaveAsDialogSettings">

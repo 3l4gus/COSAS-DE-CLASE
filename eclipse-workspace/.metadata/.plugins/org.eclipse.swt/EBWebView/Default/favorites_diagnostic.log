@@ -287,3 +287,42 @@
 2026-11-11 15:34:04.522: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-11-11 15:34:04.522: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
 2026-11-11 15:34:57.446: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-26 14:18:26.461: [INFO] CurrentProfilePath: C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-26 14:18:26.461: [INFO] Profiles total count: 1
+2026-11-26 14:18:26.461: [INFO] Profile: name=Perfil 1 path=C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-11T15:34:57.392Z
+2026-11-26 14:18:26.461: [INFO] LastUsedProfileDir: C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-26 14:18:26.461: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-11T15:34:57.392Z
+2026-11-26 14:18:26.461: [INFO] OnDoneLoading sync enabled: 0
+2026-11-26 14:18:26.461: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-26 14:18:26.461: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-26 14:18:26.461: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-26 14:22:32.523: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-26 14:23:36.931: [INFO] CurrentProfilePath: C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-26 14:23:36.931: [INFO] Profiles total count: 1
+2026-11-26 14:23:36.931: [INFO] Profile: name=Perfil 1 path=C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-26T14:22:32.483Z
+2026-11-26 14:23:36.931: [INFO] LastUsedProfileDir: C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-26 14:23:36.931: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-26T14:22:32.483Z
+2026-11-26 14:23:36.931: [INFO] OnDoneLoading sync enabled: 0
+2026-11-26 14:23:36.931: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-26 14:23:36.931: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-26 14:23:36.931: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-26 14:35:59.562: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-26 14:36:17.464: [INFO] CurrentProfilePath: C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-26 14:36:17.464: [INFO] Profiles total count: 1
+2026-11-26 14:36:17.464: [INFO] Profile: name=Perfil 1 path=C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-26T14:35:17.153Z
+2026-11-26 14:36:17.464: [INFO] LastUsedProfileDir: C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-26 14:36:17.464: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-26T14:35:17.153Z
+2026-11-26 14:36:17.464: [INFO] OnDoneLoading sync enabled: 0
+2026-11-26 14:36:17.464: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-26 14:36:17.464: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-26 14:36:17.464: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-26 17:10:57.344: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-26 17:11:57.671: [INFO] CurrentProfilePath: C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-26 17:11:57.671: [INFO] Profiles total count: 1
+2026-11-26 17:11:57.671: [INFO] Profile: name=Perfil 1 path=C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-26T17:10:57.075Z
+2026-11-26 17:11:57.671: [INFO] LastUsedProfileDir: C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-26 17:11:57.671: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Users\PC RACING\Documents\COSAS-DE-CLASE\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-26T17:10:57.075Z
+2026-11-26 17:11:57.671: [INFO] OnDoneLoading sync enabled: 0
+2026-11-26 17:11:57.671: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-26 17:11:57.671: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-26 17:11:57.671: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
